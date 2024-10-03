@@ -24,4 +24,4 @@ Multi Tenancy database:
 
     12)Now make the TenantJobTrait for handling the tenant connections where during the queue working jobs for tenant database .(ex.TenantJobTrait.php)
 
-    13)Now Make the job for tenant and dispatch it from the tenant web.
+    13)Now Make the job for tenant and dispatch it from the tenant web and work the queue.

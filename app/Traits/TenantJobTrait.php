@@ -19,15 +19,19 @@ trait TenantJobTrait
 
     protected function deleteJobs($customers)
     {
+        $gmail = $customers['gmail'] ?? null;
+      
         // Delete from central jobs table
         DB::connection('mysql')->table('jobs')
             ->where('payload', 'like', '%' . json_encode($customers) . '%')
             ->delete();
-
+            
         // Delete from tenant jobs table
+        $pattern = sprintf('\"gmail\":\"%s\"', $gmail);
         DB::connection('tenant')->table('jobs')
-            ->where('payload', 'like', '%' . json_encode($customers) . '%')
-            ->delete();
+          ->where('payload', 'like', '%' . $gmail . '%')
+          ->delete();    
+
+     
     }
-    
 }

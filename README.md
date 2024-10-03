@@ -20,6 +20,8 @@ Multi Tenancy database:
 
     10)make your tenant routes and functions for tenant db.(ex.AdminRoute.php)
 
-    11)Now make the TenantJobTrait for handling the tenant connections where during the queue working jobs for tenant database .(ex.TenantJobTrait.php)
+    11)Set the general tenant database cridetials to that database connections . (ex.database.php)
 
-    12)Now Make the job for tenant and dispatch it from the tenant web.
+    12)Now make the TenantJobTrait for handling the tenant connections where during the queue working jobs for tenant database .(ex.TenantJobTrait.php)
+
+    13)Now Make the job for tenant and dispatch it from the tenant web.
